@@ -14,9 +14,11 @@ const DetailComponent = ({
   link,
 }: DetailComponentProps) => {
   return (
-    <div className="detail-wrapper">
+    <div className="info-wrapper">
       <h2>{name}</h2>
-      <h3>*{birth + death}</h3>
+      <h3>
+        {birth} {death}
+      </h3>
       <p>{text}</p>
       <a href={link} target="_blank">
         Více na Paměti národa

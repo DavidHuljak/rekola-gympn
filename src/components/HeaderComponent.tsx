@@ -4,7 +4,9 @@ const HeaderComponent = () => {
   return (
     <div>
       <h1>
-        <Link to="/">Pamětníci na rekolech</Link>
+        <Link to="/" className="header">
+          Pamětníci na rekolech
+        </Link>
       </h1>
     </div>
   );

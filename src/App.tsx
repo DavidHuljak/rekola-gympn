@@ -1,9 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import rekolaData from "./assets/data.json";
+import data from "./assets/data.json";
 import DetailComponent from "./components/DetailComponent";
 import HomeComponent from "./components/HomeComponent";
 import FooterComponent from "./components/FooterComponent";
 import HeaderComponent from "./components/HeaderComponent";
+import { Link } from "react-router-dom";
 
 const App = () => (
   <div className="main-wrapper">
@@ -19,25 +20,36 @@ const App = () => (
             </>
           }
         />
-        {rekolaData.map((rekola, index) => (
+        {data.map((person, index) => (
           <Route
             key={index}
-            path={`/${rekola.path}`}
+            path={`/${person.path}`}
             element={
               <>
                 <HeaderComponent />
                 <DetailComponent
-                  name={rekola.name}
-                  birth={rekola.birth}
-                  death={"-"}
-                  text={rekola.text}
-                  link={rekola.link}
+                  name={person.name}
+                  birth={"* " + person.birth}
+                  death={person.death.length <= 0 ? "" : "✝ " + person.death}
+                  text={person.text}
+                  link={person.link}
                 />
                 <FooterComponent />
               </>
             }
           />
         ))}
+        <Route
+          path="*"
+          element={
+            <>
+              <HeaderComponent />
+              <h2 className="not-found">Stránka nenalezena.</h2>
+              <Link to="/" replace />
+              <FooterComponent />
+            </>
+          }
+        />
       </Routes>
     </BrowserRouter>
   </div>

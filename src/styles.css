@@ -1,17 +1,11 @@
-@font-face {
-  font-family: Tablet;
-  src: url(./assets/fonts/tablet.ttf);
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: Tablet;
-  src: url(./assets/fonts/tablet-gothic-bold.ttf);
-  font-weight: bold;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-  font-family: Tablet, sans-serif;
+  font-family: tablet-gothic, sans-serif;
   line-height: 1.5;
 
   color-scheme: light dark;
@@ -41,8 +35,22 @@ h1 {
   line-height: 1.1;
 }
 
+p {
+  font-size: 1.1em;
+  line-height: 1.5;
+}
+
+.header {
+  color: #000000;
+  font-weight: bold;
+}
+
+.header:hover {
+  color: #000000;
+}
+
 .main-wrapper {
-  margin: 0 auto;
+  margin: 5% auto;
   text-align: center;
 }
 
@@ -51,19 +59,24 @@ h1 {
   justify-content: center;
   gap: 2em;
   flex-wrap: wrap;
-  margin: 2em 0;
+  margin: 2em auto;
+  max-width: 60%;
 }
 
 .main-text {
   line-height: 1.5;
-  max-width: 80%;
+  max-width: 60%;
   margin: 0 auto;
 }
 
-.detail-wrapper {
+.info-wrapper {
   line-height: 1.5;
-  max-width: 80%;
-  margin: 0 auto 2em;
+  max-width: 60%;
+  margin: 2em auto 2em;
+  a,
+  p {
+    margin: 1em 0;
+  }
 }
 
 .logo {
@@ -76,7 +89,14 @@ h1 {
 .card {
   padding: 2em;
   background: #ffffff;
+  font-size: 1.2rem;
+
   .card-link {
     color: #000000;
+    font-weight: bold;
   }
+}
+
+.not-found {
+  margin: 1.5rem;
 }
