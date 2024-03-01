@@ -30,7 +30,7 @@ const App = () => (
                 <DetailComponent
                   name={person.name}
                   birth={"* " + person.birth}
-                  death={person.death.length <= 0 ? "" : "✝ " + person.death}
+                  death={person.death.length <= 0 ? "" : "† " + person.death}
                   text={person.text}
                   link={person.link}
                 />
