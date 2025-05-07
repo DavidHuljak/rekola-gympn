@@ -7,14 +7,16 @@
 :root {
   font-family: tablet-gothic, sans-serif;
   line-height: 1.5;
-
-  color-scheme: light dark;
   color: #000000;
   background: #fff1cd;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  margin: 0 auto;
+  width: 100%;
+  overflow-x: hidden;
+  animation: fadeIn 0.5s ease-out;
 }
 
 a {
@@ -22,27 +24,28 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #7279fb;
 }
 
-html body {
-  margin: 0 auto;
-}
-
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  margin: 0;
+  padding: 0;
 }
 
 p {
   font-size: 1.1em;
-  line-height: 1.5;
+  line-height: 1.6;
+  text-align: justify;
 }
 
 .header {
-  color: #000000;
+  font-size: 3rem;
   font-weight: bold;
+  text-align: center;
+  margin: 1rem auto;
+  color: #000000;
 }
 
 .header:hover {
@@ -50,58 +53,116 @@ p {
 }
 
 .main-wrapper {
-  margin: 5% auto;
+  margin: 3rem auto 1rem auto;
   text-align: center;
 }
 
 .info-wrapper {
   font-size: 1.2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.info {
+  margin-bottom: 2em;
+  text-align: justify;
 }
 
 .card-wrapper {
   display: flex;
   justify-content: center;
-  gap: 2em;
   flex-wrap: wrap;
-  margin: 2em auto;
-  max-width: 60%;
+  gap: 2rem;
+  padding: 1.5rem;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.card {
+  padding: 2.5rem;
+  background: #ffffff;
+  font-size: 1.4rem;
+  text-align: center;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 350px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-link {
+  color: #000000;
+  font-weight: bold;
 }
 
 .main-text {
   line-height: 1.5;
-  max-width: 60%;
+  max-width: 800px;
   margin: 0 auto;
-}
-
-.info-wrapper {
-  line-height: 1.5;
-  max-width: 60%;
-  margin: 2em auto 2em;
-  a,
-  p {
-    margin: 1em 0;
-  }
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
-.card {
-  padding: 2em;
-  background: #ffffff;
-  font-size: 1.2rem;
-
-  .card-link {
-    color: #000000;
-    font-weight: bold;
-  }
+  padding: 0 1rem;
+  text-align: justify;
 }
 
 .not-found,
 .loader {
   margin: 1.5rem;
+}
+
+footer {
+  padding: 2rem;
+  text-align: center;
+  font-size: 1rem;
+  color: #333;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 1.2rem;
+  }
+
+  .main-wrapper {
+    margin: 0.5rem auto;
+  }
+
+  .card-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  .card {
+    font-size: 1.5rem;
+    padding: 2rem;
+    width: 90%;
+  }
+
+  .header {
+    font-size: 1.7rem;
+    text-align: center;
+    margin: 1rem auto;
+  }
+
+  .info-wrapper {
+    padding: 2rem;
+    max-width: 100%;
+  }
+
+  .text-info {
+    font-size: 1.3rem;
+  }
+
+  footer {
+    margin-top: 2rem;
+  }
 }

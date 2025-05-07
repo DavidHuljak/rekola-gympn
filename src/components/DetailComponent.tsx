@@ -32,7 +32,7 @@ const DetailComponent = ({
       <h3>
         {birth} {death}
       </h3>
-      <p>{text}</p>
+      <p className="text-info">{text}</p>
       <a href={link} target="_blank">
         Více na Paměti národa
       </a>
