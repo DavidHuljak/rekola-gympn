@@ -1,16 +1,9 @@
-import { Link } from "react-router-dom";
-import tz_regpn from "../assets/tz_regpn.pdf";
+import Link from "next/link";
+import { getData, Person } from "./actions";
 
-interface Person {
-  name: string;
-  birth: string;
-  death: string;
-  text: string;
-  link: string;
-  path: string;
-}
+export default async function Home() {
+  const data = await getData();
 
-const HomeComponent: React.FC<{ data: Person[] }> = ({ data }) => {
   return (
     <div>
       <div className="info-wrapper">
@@ -28,7 +21,7 @@ const HomeComponent: React.FC<{ data: Person[] }> = ({ data }) => {
             target="_blank"
             rel="noopener noreferrer"
             style={{ cursor: "pointer" }}
-            href={tz_regpn}
+            href="/tz_regpn.pdf"
             className="tz-link"
           >
             Čtěte více v tiskové zprávě
@@ -38,7 +31,7 @@ const HomeComponent: React.FC<{ data: Person[] }> = ({ data }) => {
       <div className="card-wrapper">
         {data.map((person: Person, index: number) => (
           <div key={index} className="card">
-            <Link to={`/${person.path}`} className="card-link">
+            <Link href={`/${person.path}`} className="card-link">
               {person.name}
             </Link>
           </div>
@@ -46,6 +39,4 @@ const HomeComponent: React.FC<{ data: Person[] }> = ({ data }) => {
       </div>
     </div>
   );
-};
-
-export default HomeComponent;
+}
